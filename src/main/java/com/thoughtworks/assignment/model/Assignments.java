@@ -1,5 +1,6 @@
 package com.thoughtworks.assignment.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,7 +9,9 @@ import java.util.List;
 @Document(collection = "assignments")
 public class Assignments {
     @Id
+    @JsonIgnore
     private String id;
+
     private String employeeId;
     private List<Assignment> assignments;
 

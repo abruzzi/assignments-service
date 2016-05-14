@@ -1,0 +1,18 @@
+assignment:
+  build: .
+  ports:
+    - 9797:9797
+  entrypoint:
+    - java
+    - -Dserver.port=9797
+    - -Dspring.data.mongodb.uri=mongodb://mongodb/operation
+    - -Dspring.profiles.active=production
+    - -jar
+    - /app/assignment-service.jar
+  links:
+    - mongodb
+
+mongodb:
+ image: mongo
+ ports:
+   - 27017:27017
