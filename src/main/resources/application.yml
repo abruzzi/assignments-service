@@ -1,11 +1,11 @@
 server:
-  port: 9000
+  port: 9900
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
     preferIpAddress: true
 
-spring.data.mongodb.uri: mongodb://127.0.0.1:27017/operation
+spring.data.mongodb.uri: mongodb://mongodb:27017/operation
